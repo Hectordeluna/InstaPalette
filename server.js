@@ -15,6 +15,13 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'path/to/your/index.html'), function(err) {
+      if (err) {
+        res.status(500).send(err)
+      }
+    })
+})
 
 app.get('/api/photo/:name', async (req, res) => {
     var photos = [];
@@ -62,7 +69,7 @@ app.get('/api/photo/:name', async (req, res) => {
             profilePhoto : profilePicUrl,
             posts : mediaArray.length,
         }
-        
+
          return res.json(dataObject);
 
 
