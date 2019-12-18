@@ -9,8 +9,8 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/public/index.html'), function(err) {
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/public/index.html'), function(err) {
       if (err) {
         res.status(500).send(err)
       }
