@@ -1,15 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Axios = require('axios');
-var palette = require('image-palette');
 var pixels = require('image-pixels');
-var mergeImg = require('merge-img'); 
-var getPixels = require('get-image-pixels')
 var getPalette = require('get-rgba-palette');
-const getColors = require('get-image-colors');
-var arrayBufferConcat = require('arraybuffer-concat');
-// Test
-const fs = require('fs');
+var path = require('path');
 
 const app = express();
 
