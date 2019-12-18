@@ -4,8 +4,6 @@ const Axios = require('axios');
 var pixels = require('image-pixels');
 var getPalette = require('get-rgba-palette');
 var path = require('path');
-cors = require ('cors'),
-
 const app = express();
 
 app.use(bodyParser.json());
