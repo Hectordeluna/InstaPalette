@@ -41,6 +41,7 @@ app.get('/api/photo/:name', async (req, res) => {
         const jsonObject = userInfoSource.data.match(/<script type="text\/javascript">window\._sharedData = (.*)<\/script>/)[1].slice(0, -1)
 
         const userInfo = JSON.parse(jsonObject)
+        console.log(userInfo);
         // Retrieve only the first 10 results
         const mediaArray = userInfo.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges.splice(0, 100);
         const profilePicUrl = userInfo.entry_data.ProfilePage[0].graphql.user.profile_pic_url;
@@ -99,7 +100,6 @@ app.get('/api/photo/:name', async (req, res) => {
         // });
     } catch (e) {
         return res.status(500).send('Unable to retrieve photos. Reason: ' + e.toString());
-        console.error('Unable to retrieve photos. Reason: ' + e.toString())
     }
     
 
