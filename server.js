@@ -105,7 +105,7 @@ app.get('/api/photo/:name', async (req, res) => {
 
 });
 
-app.get('*', (req,res) =>{
+app.all('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
   
